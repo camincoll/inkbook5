@@ -1,23 +1,24 @@
-<h1>Listing clients</h1>
+<div class="page-header">
+	<h1>All Huddle clients</h1>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= link_to 'Add New Client', new_client_path, class:"btn btn-success" %>
+
 
 <% @clients.each do |client| %>
-  <tr>
-    <td><%= client.name %></td>
-    <td><%= link_to 'Show', client %></td>
-    <td><%= link_to 'Edit', edit_client_path(client) %></td>
-    <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+	<div class="client">
+		<strong> <%= client.name %> </strong>
+		<div class="meta">
+	    	<%= link_to time_ago_in_words(client.created_at) +" ago", client %>
+			<span class="admin">
+	    		| <%= link_to 'Edit', edit_client_path(client) %> | 
+	    		<%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</span>
+		</div>
+	</div>
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Client', new_client_path %>
+
+
+
