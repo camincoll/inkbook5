@@ -1,11 +1,7 @@
 InkBook::Application.routes.draw do
-  devise_for :users
-
   resources :statuses
 
   resources :clients
-
-  root to: 'clients#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
