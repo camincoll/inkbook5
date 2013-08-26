@@ -9,6 +9,12 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :title
   # attr_accessible :title, :body
 
+  validates :first_name, presence: true
+
+  validates :last_name, presence: true
+
+  validates :title, presence: true, uniqueness: true
+
   has_many :statuses
 
   def full_name 
