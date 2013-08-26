@@ -1,11 +1,25 @@
 InkBook::Application.routes.draw do
-  resources :projects
 
   devise_for :users
 
+  devise_scope :user do
+    get 'register', to: 'devise/registrations#new', as: :register
+    get 'login', to: 'devise/sessions#new', as: :login
+    get 'logout', to: 'devise/sessions#destroy', as: :logout
+  end
+
   resources :statuses
+    get 'feed', to: 'statuses#index', as: :feed
 
   resources :clients
+
+  resources :projects
+
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  # root :to => 'welcome#index'
+
+  root :to => 'clients#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -54,11 +68,6 @@ InkBook::Application.routes.draw do
   #     resources :products
   #   end
 
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
-  root :to => 'clients#index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -3,7 +3,6 @@
   <div class="span4">
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { class: "well" }) do |f| %>
-  <%= devise_error_messages! %>
 
       <fieldset>
         <legend>New <%= resource_name.to_s.humanize %></legend>
