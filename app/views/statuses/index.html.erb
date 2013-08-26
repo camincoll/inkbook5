@@ -4,8 +4,7 @@
 
 <% @statuses.each do |status| %>
 	<div class="status">
-		<strong> Name </strong>
-		<%= status.user.full_name %><br />
+		<strong> <%= status.user.full_name %> </strong>(<%= status.user.profile_name %>)<br />
 		<%= status.content %>
 		<div class="meta">
 	    	<%= link_to time_ago_in_words(status.created_at) +" ago", status %>
