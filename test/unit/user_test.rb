@@ -27,4 +27,13 @@ class UserTest < ActiveSupport::TestCase
   	assert !user.errors[:title].empty?
   end
 
+  test "a user should enter a correctly formatted title" do
+    user = User.new(first_name: 'Jason', last_name: 'Basin', 
+      email: 'jason@basin.com' ) 
+    user.password = user.password_confirmation = 'password'
+    user.title = 'Director_General'
+    assert !user.valid? 
+  end
+
+
 end
