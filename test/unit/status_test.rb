@@ -26,7 +26,7 @@ class StatusTest < ActiveSupport::TestCase
 
   end
 
-    test "statuses can be saved when wehave a user_id" do
+  test "statuses can be saved when we have a user_id" do
   	status = Status.new
   	status.content = "Hello"
   	status.user_id = "1"
