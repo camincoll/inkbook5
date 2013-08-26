@@ -1,1 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+jason:
+  first_name: "Jason"
+  last_name: "Basin"
+  email: "jason@basin.com"
+  title: "Director"
