@@ -23,6 +23,8 @@ InkBook::Application.routes.draw do
 
   root :to => 'clients#index'
 
+  get ':id', to: 'profiles#show'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

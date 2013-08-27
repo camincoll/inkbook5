@@ -4,3 +4,9 @@ jason:
   last_name: "Basin"
   email: "jason@basin.com"
   title: "Director"
+
+jim:
+  first_name: "Jim"
+  last_name: "Hoskins"
+  email: "Jim@basin.com"
+  title: "Accountant"

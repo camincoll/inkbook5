@@ -17,7 +17,13 @@ class CustomRoutesTest < ActionDispatch::IntegrationTest
   end
   
   test "that the /register route opens the register page" do
-  	get '/register'
-  	assert_response :success
+    get '/register'
+    assert_response :success
   end
+
+  test "that a profile page works" do
+    get '/jasonbasin'
+    assert_response :success
+  end
+
 end
