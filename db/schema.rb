@@ -30,19 +30,19 @@ ActiveRecord::Schema.define(:version => 20130825235909) do
   end
 
   create_table "statuses", :force => true do |t|
+    t.integer  "user_id"
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "user_id"
   end
 
-  add_index "statuses", ["user_id"], :name => "index_statuses_on_user_id"
+  add_index "statuses", ["user_id"], :name => "index_statuses_on_user_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "title"
     t.string   "profile_name"
+    t.string   "title"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
