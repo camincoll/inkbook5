@@ -1,15 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @status.user.full_name %> (<%= @status.user.profile_name %>)
-</p>
+<div class="status">
+	<h1>  <%= @status.user.full_name %> </h1> 
+	<p>
+		<%= @status.content %>
+	</p>
+	<div class="meta">
+    	<%= link_to time_ago_in_words(@status.created_at) +" ago", @status %> by (<%= @status.user.profile_name %>)
+		<span class="admin"> 
+    		| <%= link_to 'Edit', edit_client_path(@status) %> | 
+    		<%= link_to 'Destroy', @status, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</span>
+	</div>
+</div>
 
-<p>
-  <b>Content:</b>
-  <%= @status.content %>
-</p>
-
-
-<%= link_to 'Edit', edit_status_path(@status) %> |
-<%= link_to 'Back', statuses_path %>
+<div>
+	<%= link_to 'Edit', edit_status_path(@status) %> |
+	<%= link_to 'Back', statuses_path %>
+</div>

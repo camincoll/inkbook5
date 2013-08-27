@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @client.name %>
-</p>
+<div class="client">
+	<h1>  <%= @client.name %> </h1>
+	<div class="meta">
+    	<%= link_to time_ago_in_words(@client.created_at) +" ago", @client %>
+		<span class="admin">
+    		| <%= link_to 'Edit', edit_client_path(@client) %> | 
+    		<%= link_to 'Destroy', @client, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</span>
+	</div>
+</div>
 
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
