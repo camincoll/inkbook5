@@ -7,8 +7,6 @@ gem 'rails', '3.2.6'
 
 gem 'devise'
 gem 'simple_form'
-gem 'twitter-bootstrap-rails'
-
 
 group :development, :test do
 	gem 'sqlite3'
@@ -16,7 +14,12 @@ end
 
 group :production do
 	gem 'pg'
+	gem "therubyracer"
+	gem "less-rails"
 end
+
+gem 'twitter-bootstrap-rails'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
