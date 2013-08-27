@@ -11,10 +11,10 @@
 	display: none;
 }
 
-.project.hover {
+.project:hover {
 	background: #FAFAFA
 }
 
-.project.hover .admin {
+.project:hover .admin {
 	display: inline;
 }

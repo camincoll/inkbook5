@@ -11,10 +11,10 @@
 	display: none;
 }
 
-.client.hover {
+.client:hover {
 	background: #FAFAFA
 }
 
-.client.hover .admin {
+.client:hover .admin {
 	display: inline;
 }
