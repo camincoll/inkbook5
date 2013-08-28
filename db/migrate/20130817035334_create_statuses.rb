@@ -5,6 +5,6 @@ class CreateStatuses < ActiveRecord::Migration
       t.text :content
       t.timestamps
     end
-    add_index :statuses, :user_id, :unique => true
+    add_index :statuses, :user_id
   end
 end
