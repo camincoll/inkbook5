@@ -10,3 +10,9 @@ jim:
   last_name: "Hoskins"
   email: "Jim@basin.com"
   title: "Accountant"
+
+mike:
+  first_name: "Mike"
+  last_name: "The Frog"
+  email: "mike@basin.com"
+  title: "Amphibian"

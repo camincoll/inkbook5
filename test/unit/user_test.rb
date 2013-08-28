@@ -47,5 +47,6 @@ class UserTest < ActiveSupport::TestCase
     assert user.valid? 
   end
 
+  should have_many(:followings)
 
 end
