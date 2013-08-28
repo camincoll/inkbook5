@@ -48,5 +48,19 @@ class UserTest < ActiveSupport::TestCase
   end
 
   should have_many(:followings)
+  should have_many(:followers)
 
+  test "that no error is raised when trying to access the follower list" do
+    assert_nothing_raised do
+      users(:jason).followers  
+    end
+  end
+
+  test "that creating a following on a user works" do
+    assert_nothing_raised do
+      users(:jason).followers << users(:mike)
+      users(:jason).followers.reload
+      assert users(:jason).followers.include?(users(:mike))
+    end
+  end
 end
