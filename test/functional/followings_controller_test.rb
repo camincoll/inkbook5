@@ -49,6 +49,11 @@ class FollowingsControllerTest < ActionController::TestCase
 				get :new, follower_id: 'invalid'
 				assert_response :not_found
 			end
+
+			should "ask do you really want to follow this user" do
+				get :new, follower_id: users(:jim)
+				assert_match /Do you really want to follow #{users(:jim).full_name}/, response.body
+			end
 		end
   	end
 end
