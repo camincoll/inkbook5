@@ -26,22 +26,22 @@ class FollowingsControllerTest < ActionController::TestCase
 			end
 
 			should "find the follower and display the name" do
-				get :new, follower_id: users(:jim).id
+				get :new, follower_id: users(:jim)
 				assert_match /#{users(:jim).full_name}/, response.body
 			end
 
 			should "assign a new user follower" do
-				get :new, follower_id: users(:jim).id
+				get :new, follower_id: users(:jim)
 				assert assigns(:following)
 			end
 
 			should "assign a new user follower to correct friend" do
-				get :new, follower_id: users(:jim).id
+				get :new, follower_id: users(:jim)
 				assert_equal users(:jim), assigns(:following).follower
 			end
 
 			should "assign a new user follower to the currently logged in user" do
-				get :new, follower_id: users(:jim).id
+				get :new, follower_id: users(:jim)
 				assert_equal users(:jason), assigns(:following).user
 			end
 

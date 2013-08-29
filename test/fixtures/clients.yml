@@ -1,4 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-Optus:
+one:
     name: "Optus"
+
+two:
+    name: "Medibank"

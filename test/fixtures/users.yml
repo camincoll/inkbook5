@@ -4,15 +4,18 @@ jason:
   last_name: "Basin"
   email: "jason@basin.com"
   title: "Director"
+  profile_name: "jasonbasin"
 
 jim:
   first_name: "Jim"
   last_name: "Hoskins"
   email: "Jim@basin.com"
   title: "Accountant"
+  profile_name: "Jimmy"
 
 mike:
   first_name: "Mike"
   last_name: "The Frog"
   email: "mike@basin.com"
   title: "Amphibian"
+  profile_name: "mikethefrog"
