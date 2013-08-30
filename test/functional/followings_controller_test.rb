@@ -56,4 +56,66 @@ class FollowingsControllerTest < ActionController::TestCase
 			end
 		end
   	end
+
+  	context "#create" do
+  		context "when not logged in" do
+  			should "redirect to login page" do
+  				get :new
+  				assert_response :redirect
+  				assert_redirected_to login_path
+			end
+		end
+
+		context "when logged in" do
+			setup do
+				sign_in users(:jason)
+			end
+		
+			context "with no follower id" do
+				setup do
+					post :create
+				end
+
+				should "set the flash error message" do
+					assert !flash[:error].empty?
+				end
+				should "get redirected to root path" do
+					assert_redirected_to root_path
+				end
+			end
+
+			context "with valid follower id" do
+				setup do
+					post :create, following: { follower_id: users(:mike) }
+				end
+
+				should "assign the follower" do
+					assert assigns(:follower)
+					assert_equal users(:mike), assigns(:follower)
+
+				end
+
+				should "also assign the following object" do
+					assert assigns(:following)
+					assert_equal users(:jason), assigns(:following).user
+					assert_equal users(:mike), assigns(:following).follower
+				end
+
+				should "create a following" do
+					assert users(:jason).followers.include?(users(:mike))
+				end
+
+				should "also redirect to follower" do
+	  				assert_response :redirect
+	  				assert_redirected_to profile_path(users(:mike))
+				end
+
+				should "set the flash message that we're following" do
+					assert flash[:success]
+					assert_equal "You are now following #{users(:mike).full_name}", flash[:success]
+				end
+			end
+		end
+	end
+
 end

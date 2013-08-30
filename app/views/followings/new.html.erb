@@ -6,7 +6,7 @@
 
 	 <%= form_for @following, method: :post do |f| %>
 	 	<div class="form form-actions">
-		 	<%= f.hidden_field :follower_id, value: @follower_id %>
+		 	<%= f.hidden_field :follower_id, value: @follower.profile_name %>
 		 	<%= submit_tag "Yes I do", class: "btn btn-primary" %>
 		 	<%= link_to "Cancel", profile_path(@follower), class: "btn" %>
 	 	</div>
