@@ -28,6 +28,9 @@ class User < ActiveRecord::Base
 
   has_many :followers, through: :followings
 
+  has_many :roles
+  has_many :projects, :through => :roles
+
   def full_name 
   	first_name + " " + last_name
   end

@@ -4,4 +4,7 @@ class Project < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
 
   belongs_to :client
+
+  has_many :roles, :dependent => :destroy
+
 end
