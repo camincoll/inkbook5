@@ -16,7 +16,7 @@
         <strong> 
         <%= project.client.name %> : <%= project.name %></strong> : 
         <%= project.description %><br />
-        Start: <%= project.start %> End: <%= project.end %><br />
+        Start: <%= project.start.strftime("%e-%B-%Y") %> End: <%= project.end.strftime("%e-%B-%Y") %><br />
         $<%= number_with_precision(project.value, precision: 2, separator: '.', delimiter: ',' ) %>
         <div class="meta">
             <%= link_to time_ago_in_words(project.created_at) +" ago", project %>

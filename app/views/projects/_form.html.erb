@@ -4,10 +4,10 @@
   <div class="form-inputs">
     <%= f.input :client_id, collection: Client.all, label_method: :name %>
     <%= f.input :name, :autofocus => true %>
-    <%= f.input :description %>
-    <%= f.input :start %>
-    <%= f.input :end %>
-    <%= f.input :value %>
+    <%= f.input :description, input_html: { class: "span6" } %>
+    <%= f.input :start, input_html: { class: "span2" } %>
+    <%= f.input :end, input_html: { class: "span2" } %>
+    <%= f.input :value, input_html: { class: "span2" } %>
   </div>
 
   <div class="form-actions">

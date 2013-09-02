@@ -1,0 +1,1 @@
+Date::DATE_FORMATS[:project_dates]="%d %B %Y"
