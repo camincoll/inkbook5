@@ -11,13 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130828005607) do
+ActiveRecord::Schema.define(:version => 20130830020826) do
 
   create_table "clients", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "project_id"
   end
+
+  add_index "clients", ["project_id"], :name => "index_clients_on_project_id"
 
   create_table "followings", :force => true do |t|
     t.integer  "user_id"
@@ -36,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20130828005607) do
     t.decimal  "value"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "client_id"
   end
 
   create_table "statuses", :force => true do |t|

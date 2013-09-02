@@ -1,7 +1,7 @@
 
     <div class="project">
-        <h1> 
-        <%= @project.name %></h1>
+        <h1> <%= @project.name %></h1>
+        <h2><%= @project.client.name %></h2>
         <%= @project.description %><br />
         Start: <%= @project.start %> End: <%= @project.end %><br />
         $<%= number_with_precision(@project.value, precision: 2, separator: '.', delimiter: ',' ) %>

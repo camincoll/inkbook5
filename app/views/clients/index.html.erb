@@ -11,18 +11,17 @@
 
 <% @clients.each do |client| %>
 	<div class="client">
-		<strong> <%= client.name %> </strong>
-		<div class="meta">
+		<h2> <%= client.name %> </h2>
+		 <div class="meta">
 	    	<%= link_to time_ago_in_words(client.created_at) +" ago", client %>
 			<span class="admin">
 	    		| <%= link_to 'Edit', edit_client_path(client) %> | 
 	    		<%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %>
 			</span>
 		</div>
+
 	</div>
+	<%= render client.projects %>
+
+
 <% end %>
-
-
-
-
-

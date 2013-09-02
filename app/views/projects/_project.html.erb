@@ -1,20 +1,6 @@
-<div class="page-header">
-    <div class="row" >
-        <div class="span8">
-            <h1>Listing projects </h1>
-        </div>
-        <div class="span4">
-            <%= link_to 'New Project', new_project_path, class:"btn btn-success pull-right" %>
-        </div>
-    </div>
-</div>
 
- 
-
-<% @projects.each do |project| %>
-    <div class="project">
-        <strong> 
-        <%= project.client.name %> : <%= project.name %></strong> : 
+<div class="project .<%= project.name %>" style="display:none;" >
+        <strong> <%= project.name %></strong> : 
         <%= project.description %><br />
         Start: <%= project.start %> End: <%= project.end %><br />
         $<%= number_with_precision(project.value, precision: 2, separator: '.', delimiter: ',' ) %>
@@ -26,4 +12,4 @@
             </span>
         </div>
     </div>
-<% end %>
+

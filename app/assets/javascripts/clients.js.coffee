@@ -5,3 +5,7 @@
 $ ->
 	$('.client').hover (event) ->
 		$(this).toggleClass("hover")
+
+$ ->
+	$('.client').click (event) ->
+		$('.project').slideToggle()
