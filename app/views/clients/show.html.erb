@@ -1,15 +1,37 @@
-
-<div class="client">
-	<h1>  <%= @client.name %> </h1>
-	<div class="meta">
-    	<%= link_to time_ago_in_words(@client.created_at) +" ago", @client %>
-		<span class="admin">
-    		| <%= link_to 'Edit', edit_client_path(@client) %> | 
-    		<%= link_to 'Destroy', @client, method: :delete, data: { confirm: 'Are you sure?' } %>
-		</span>
+<div class="page-header">
+	<div class="row" >
+        <div class="span8">
+			<h1>  <%= @client.name %> </h1>
+		</div>
+        <div class="span4">
+			<%= link_to 'Add New Project', new_project_path, class:"btn btn-success pull-right" %>
+		</div>
 	</div>
 </div>
 
+<div class="row" >
+    <div class="span4">
+		<div class="well">
+			<div class="meta client">
+		    	<p><%= link_to 'Updated ' + time_ago_in_words(@client.created_at) +" ago", @client %>
+				<span class="admin">
+		    		| <%= link_to 'Edit', edit_client_path(@client) %> | 
+		    		<%= link_to 'Destroy', @client, method: :delete, data: { confirm: 'Are you sure?' } %>
+				</span>
+				</p>
+			</div>
+		</div>
+	</div>
+    <div class="span8">
+    	<%= render @client.projects %>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
+    </div>
+</div>    
+
+
+<div class="row" >
+    <div class="span4">
+
 <%= link_to 'Back', clients_path %>
+</div>
+</div>

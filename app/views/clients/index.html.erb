@@ -11,13 +11,11 @@
 
 <% @clients.each do |client| %>
 	<div class="client">
-		<h2> <%= client.name %> </h2>
+		<h2> <%= link_to client.name, client %></h2>
 		 <div class="meta">
-		 	<%= pluralize(client.projects.size,"project") %> | 
-	    	<%= link_to time_ago_in_words(client.created_at) +" ago", client %>
+		 	<%= pluralize(client.projects.size,"project") %>
 			<span class="admin">
-	    		| <%= link_to 'Edit', edit_client_path(client) %> | 
-	    		<%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %>
+	    		| <%= link_to 'Edit', edit_client_path(client) %>
 			</span>
 		</div>
 	</div>
