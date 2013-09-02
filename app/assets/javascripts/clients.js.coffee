@@ -8,4 +8,4 @@ $ ->
 
 $ ->
 	$('.client').click (event) ->
-		$('.project').slideToggle()
+		$(this).next('.client_projects').slideToggle()
