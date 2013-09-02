@@ -13,6 +13,7 @@
     <div class="span4">
 		<div class="well">
 			<div class="meta client">
+				<p> ABN: <%= number_with_delimiter(@client.abn, delimiter: " ") %>
 		    	<p><%= link_to 'Updated ' + time_ago_in_words(@client.created_at) +" ago", @client %>
 				<span class="admin">
 		    		| <%= link_to 'Edit', edit_client_path(@client) %> | 
