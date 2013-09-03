@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+    title: "Project Lead"
+    project_id: '1'
+
+two:
+    title: "Designer"
+    project_id: '1'

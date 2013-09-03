@@ -1,0 +1,16 @@
+<%= simple_form_for(@role) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<%= f.input :project_id, collection: Project.all, label_method: :name, :autofocus => true  %>
+  	<%= f.input :user_id, collection: User.all, label_method: :full_name %>
+    <%= f.input :title %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+

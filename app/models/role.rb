@@ -7,6 +7,6 @@ class Role < ActiveRecord::Base
 	validates :project_id, :presence => true
 	validates :title, :presence => true
 
-	attr_accessible :title
+	attr_accessible :title, :project_id, :user_id
 
 end
