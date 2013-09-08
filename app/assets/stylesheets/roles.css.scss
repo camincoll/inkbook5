@@ -1,3 +1,20 @@
 // Place all the styles related to the Roles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.role {
+	border-bottom: solid 1px #CCC; 
+	padding: 5px 0
+}
+
+.role .admin {
+	display: none;
+}
+
+.role:hover {
+	background: #f5f5f5
+}
+
+.role:hover .admin {
+	display: inline;
+}

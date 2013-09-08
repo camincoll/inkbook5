@@ -1,21 +1,23 @@
-<h1>Listing roles</h1>
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="page-header">
+  <div class="row" >
+        <div class="span8">
+          <h1>Current roles</h1>
+        </div>
+  </div>
+</div>
 
 <% @roles.each do |role| %>
-  <tr>
-    <td><%= link_to 'Show', role %></td>
-    <td><%= link_to 'Edit', edit_role_path(role) %></td>
-    <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <div class="role">
+        <h3> 
+        <%= role.title %></h3>
+        <strong><%= role.user.full_name %></strong>, <%= role.title %> on <%= role.project.name %> for <%= role.project.client.name %>
+
+        <div class="meta">
+            <%= link_to time_ago_in_words(role.created_at) +" ago", role %>
+            <span class="admin">
+                | <%= link_to 'Edit', edit_role_path(role) %> | 
+                <%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </span>
+        </div>
+    </div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Role', new_role_path %>

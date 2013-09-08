@@ -37,7 +37,7 @@
                 <legend>Project Roles</legend>
             </div>
             <div class="span2">
-                <%= link_to 'Add Role', new_role_path, class:"btn btn-success pull-right" %>
+                <%= link_to 'Add Role', new_role_path, class:"btn btn-success pull-right", :id => @project  %>
             </div>
             <div class="span9">
                 <%= render @project.roles %>

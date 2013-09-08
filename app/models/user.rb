@@ -32,8 +32,13 @@ class User < ActiveRecord::Base
   
   has_many :projects, :through => :roles
 
+
   def full_name 
-  	first_name + " " + last_name
+    first_name + " " + last_name
+  end
+
+  def self.list_user_options 
+    User.select("id, first_name, last_name").map {|x| [x.id, x.full_name] }
   end
 
   def to_param

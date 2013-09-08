@@ -1,10 +1,11 @@
-<div class="role span2"> 
+<div class="project_role span4"> 
 	<div class="person-name well text-center"> 
-		<% if !role.user.nil? %>
-			<h4><%= role.user.full_name %></h4>
-		<% else %>
-			<h4>Role is Vacant</h4>
-		<% end %>
-		<p><%= role.title %></p>
+		<h4>
+    		<%= best_in_place role, :user_id, :type => :select, :collection => User::list_user_options %> 
+		</h4>
+
+		<p><%= best_in_place role, :title %></p>
+
+
 	</div>
 </div>
